@@ -8,11 +8,11 @@
 </head>
 <body>
   <div class="container">
-    <h1>Gerador de Senhas</h1>
+    <h1>🔐 Gerador de Senhas</h1>
 
     <div class="output">
-      <input type="text" id="password" readonly />
-      <button onclick="copyPassword()">Copiar</button>
+      <input type="text" id="password" readonly placeholder="Clique em gerar..." />
+      <button onclick="copyPassword()" title="Copiar senha">📋</button>
     </div>
 
     <div class="settings">
@@ -21,28 +21,15 @@
         <input type="number" id="length" min="4" max="64" value="12" />
       </label>
 
-      <label>
-        <input type="checkbox" id="uppercase" checked />
-        Letras maiúsculas
-      </label>
-
-      <label>
-        <input type="checkbox" id="lowercase" checked />
-        Letras minúsculas
-      </label>
-
-      <label>
-        <input type="checkbox" id="numbers" checked />
-        Números
-      </label>
-
-      <label>
-        <input type="checkbox" id="symbols" />
-        Símbolos (!@#$)
-      </label>
+      <label><input type="checkbox" id="uppercase" checked /> Letras maiúsculas</label>
+      <label><input type="checkbox" id="lowercase" checked /> Letras minúsculas</label>
+      <label><input type="checkbox" id="numbers" checked /> Números</label>
+      <label><input type="checkbox" id="symbols" /> Símbolos (!@#$)</label>
     </div>
 
-    <button class="generate" onclick="generatePassword()">Gerar Senha</button>
+    <button class="generate" onclick="generatePassword()">🚀 Gerar Senha</button>
+
+    <p id="copy-msg" class="copy-hidden">Senha copiada com sucesso!</p>
   </div>
 
   <script src="script.js"></script>
