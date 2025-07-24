@@ -1,5 +1,11 @@
 function generatePassword() {
-  const length = document.getElementById('length').value;
+  const length = parseInt(document.getElementById('length').value);
+
+  if (length > 12) {
+    alert("O comprimento máximo permitido é 12 caracteres.");
+    return;
+  }
+
   const useUpper = document.getElementById('uppercase').checked;
   const useLower = document.getElementById('lowercase').checked;
   const useNumbers = document.getElementById('numbers').checked;
