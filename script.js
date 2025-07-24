@@ -28,12 +28,24 @@ function generatePassword() {
   }
 
   document.getElementById('password').value = password;
+  document.getElementById('copy-msg').classList.remove('copy-visible');
+  document.getElementById('copy-msg').classList.add('copy-hidden');
 }
 
 function copyPassword() {
   const passwordField = document.getElementById('password');
+  if (!passwordField.value) return;
+
   passwordField.select();
   passwordField.setSelectionRange(0, 99999);
   document.execCommand('copy');
-  alert("Senha copiada!");
+
+  const msg = document.getElementById('copy-msg');
+  msg.classList.remove('copy-hidden');
+  msg.classList.add('copy-visible');
+
+  setTimeout(() => {
+    msg.classList.remove('copy-visible');
+    msg.classList.add('copy-hidden');
+  }, 2000);
 }
